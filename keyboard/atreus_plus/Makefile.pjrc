@@ -92,3 +92,10 @@ VPATH += $(TMK_DIR)
 include $(TMK_DIR)/protocol/pjrc.mk
 include $(TMK_DIR)/common.mk
 include $(TMK_DIR)/rules.mk
+
+
+colemak: OPT_DEFS += -DLAYOUT_COLEMAK
+colemak: all
+
+qwerty: OPT_DEFS += -DLAYOUT_QWERTY
+qwerty: all

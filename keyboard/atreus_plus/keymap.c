@@ -48,7 +48,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* 0 */   {    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO, KC_##K0F, KC_##K0G,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO} \
 }
 
-#include "keymap_default.h"
+#if defined(LAYOUT_COLEMAK)
+#include "keymap_colemak.h"
+#else
+#include "keymap_qwerty.h"
+#else
+#error No Layout Defined!
+#endif
 
 #define KEYMAPS_SIZE    (sizeof(keymaps) / sizeof(keymaps[0]))
 #define FN_ACTIONS_SIZE (sizeof(fn_actions) / sizeof(fn_actions[0]))
