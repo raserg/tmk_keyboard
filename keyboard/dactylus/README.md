@@ -1,11 +1,15 @@
-Atreus Plus
+Dactylus
 ======================
-A spin off of the open source Atreus board with 5 rows and 6 columns instead of 4 rows and 5 columns. this has parts of qmk ported over to make it easier to configure the rows and column pinouts along with the diode positioning.
+Based off the keyboard the dactyl from Matt Adereth. The case has been highly modified and redesigned for alps/matias switches.
+
+Wiring diagrams and 3d models can be found in the hardware directory.
 
 Build
 -----
 Move to this directory then just run `make` like:
 
-    $ make -f Makefile.[pjrc|lufa]
-    
-Use `Makefile.pjrc` if you want to use PJRC stack or use `Makefile.lufa` for LUFA stack.
+    $ make -f Makefile.pjrc
+
+Install
+-----
+Make sure you have avrdude installed and run ./flash.sh when the device is in bootloader mode after the firmware has been successfuly compiled.
