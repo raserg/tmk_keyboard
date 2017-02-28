@@ -44,7 +44,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP(  // layer 1 : function and symbol keys
         // left hand
         GRV, F1,  F2,  F3,  F4,  F5,  TRNS,
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,FN3,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,HOME,END,
@@ -52,15 +52,36 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                            TRNS,
                                  TRNS,TRNS,TRNS,
         // right hand
-             TRNS, F6,  F7,  F8,  F9,  F10, TRNS,
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                       PGDN,PGUP,TRNS,TRNS,TRNS,
+        TRNS, F6,  F7,  F8,  F9,  F10, TRNS,
+        FN4, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+                  PGDN,PGUP,TRNS,TRNS,TRNS,
         TRNS,TRNS,
         TRNS,
         TRNS,TRNS,TRNS
     ),
+  
+    KEYMAP(  // layer 2 : mods on thumb
+         // left hand
+         ESC, 1,   2,   3,   4,   5,   NO,
+         TAB, Q,   W,   E,   R,   T,   NO,
+         FN0, A,   S,   D,   F,   G,
+         LBRC,Z,   X,   C,   V,   B,   NO,
+         NO, NO,  NO, LEFT,RGHT,
+                                       LSFT,LCTL,
+                                             EQL,
+                                    BSPC,DEL, NO,
+         // right hand
+         NO,  6,   7,   8,   9,   0,       MINS,
+         NO,   Y,   U,   I,   O,   P,      BSLS,
+               H,   J,   K,   L,   SCLN,   QUOT,
+         NO,   N,   M,  COMM, DOT, SLSH,   RBRC,
+                 DOWN,  UP,   NO,    NO,    NO,
+         LALT,LGUI,
+         GRV,
+         NO, ENT, SPC
+         ),
 };
 
 /*
@@ -70,4 +91,6 @@ const uint16_t PROGMEM fn_actions[] = {
     [0] = ACTION_LAYER_MOMENTARY(1),
     [1] = ACTION_MODS_KEY(MOD_LSFT, KC_LBRC),
     [2] = ACTION_MODS_KEY(MOD_LSFT, KC_RBRC),
+    [3] = ACTION_LAYER_TOGGLE(0),
+    [4] = ACTION_LAYER_TOGGLE(2),
 };
