@@ -53,7 +53,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  TRNS,TRNS,TRNS,
         // right hand
         TRNS, F6,  F7,  F8,  F9,  F10, TRNS,
-        FN4, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
+        TRNS, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
              TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
                   PGDN,PGUP,TRNS,TRNS,TRNS,
@@ -68,19 +68,19 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          TAB, Q,   W,   E,   R,   T,   NO,
          FN0, A,   S,   D,   F,   G,
          LBRC,Z,   X,   C,   V,   B,   NO,
-         NO, NO,  NO, LEFT,RGHT,
-                                       LSFT,LCTL,
-                                             EQL,
-                                    BSPC,DEL, NO,
+         NO, NO,  LALT, LEFT,RGHT,
+                                       EQL,NO,
+                                             NO,
+                                    FN4,FN5, NO,
          // right hand
          NO,  6,   7,   8,   9,   0,       MINS,
          NO,   Y,   U,   I,   O,   P,      BSLS,
                H,   J,   K,   L,   SCLN,   QUOT,
          NO,   N,   M,  COMM, DOT, SLSH,   RBRC,
-                 DOWN,  UP,   NO,    NO,    NO,
-         LALT,LGUI,
-         GRV,
-         NO, ENT, SPC
+                 DOWN,  UP,   RALT,    NO,    NO,
+         NO,GRV,
+         NO,
+         NO, FN6, SPC
          ),
 };
 
@@ -88,9 +88,12 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Fn action definition
  */
 const uint16_t PROGMEM fn_actions[] = {
-    [0] = ACTION_LAYER_MOMENTARY(1),
-    [1] = ACTION_MODS_KEY(MOD_LSFT, KC_LBRC),
-    [2] = ACTION_MODS_KEY(MOD_LSFT, KC_RBRC),
-    [3] = ACTION_LAYER_TOGGLE(0),
-    [4] = ACTION_LAYER_TOGGLE(2),
+    ACTION_LAYER_MOMENTARY(1),
+    ACTION_MODS_KEY(MOD_LSFT, KC_LBRC),
+    ACTION_MODS_KEY(MOD_LSFT, KC_RBRC),
+    ACTION_LAYER_TOGGLE(2),
+    ACTION_MODS_TAP_KEY(MOD_LSFT, KC_BSPC),
+    ACTION_MODS_TAP_KEY(MOD_LCTL, KC_DEL),
+    ACTION_MODS_TAP_KEY(MOD_LGUI, KC_ENT),
+    ACTION_MODS_TAP_KEY(MOD_LGUI, KC_SPC),
 };
